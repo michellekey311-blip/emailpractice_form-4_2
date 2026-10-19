@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Writing Part 1 Practice: Playing Online Games</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF3F8;--card:#fff;--ink:#17252F;--mute:#5A6B78;--line:#CBD6E0;--brand:#0E5A8A;--brand-ink:#fff;--hi:#FFE9A6;--ok:#1C7C4D;--warn:#B3481A;--blank:#F7FAFD;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1A22;--card:#16252F;--ink:#E7EEF3;--mute:#9DB0BE;--line:#2C4252;--brand:#5DB4EA;--brand-ink:#08202F;--hi:#4A3F14;--ok:#5AD093;--warn:#F59A6B;--blank:#112029;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0F1A22;--card:#16252F;--ink:#E7EEF3;--mute:#9DB0BE;--line:#2C4252;--brand:#5DB4EA;--brand-ink:#08202F;--hi:#4A3F14;--ok:#5AD093;--warn:#F59A6B;--blank:#112029;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Lexend,system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:780px;margin:0 auto;padding:20px 16px 80px}
+h1{font-size:1.7rem;line-height:1.25;margin:8px 0 4px}
+h2{font-size:1.2rem;margin:0 0 10px}
+.sub{color:var(--mute);margin:0 0 18px}
+section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:0 0 18px}
+.scroll{overflow-x:auto}
+label{display:block;font-weight:500;margin:10px 0 4px}
+input[type=text],textarea{width:100%;font:inherit;color:var(--ink);background:var(--blank);border:1.5px solid var(--line);border-radius:8px;padding:9px 11px}
+input:focus,textarea:focus,button:focus-visible,.tab:focus-visible{outline:3px solid var(--brand);outline-offset:1px}
+button{font:inherit;font-weight:500;cursor:pointer;border:0;border-radius:8px;padding:11px 20px;background:var(--brand);color:var(--brand-ink)}
+button.alt{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
+.err{color:var(--warn);min-height:1.4em;margin:8px 0 0}
+#work{display:none}
+ol.ins{padding-left:22px;margin:0}ol.ins li{margin:6px 0}
+.mail{border:1.5px solid var(--line);border-radius:10px;background:var(--blank);padding:14px 16px}
+.mail p{margin:6px 0}
+.hl{background:var(--hi);padding:0 3px;border-radius:3px}
+table{border-collapse:collapse;width:100%;min-width:560px}
+th,td{border:1px solid var(--line);padding:9px 10px;vertical-align:top;text-align:left}
+th{background:var(--blank)}
+.bm{display:block;color:var(--mute);font-size:.88rem}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.tab{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.tab[aria-selected=true]{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.wb td:first-child{width:28%;font-weight:500}
+.wb li{margin:0 0 6px;list-style:none}
+.wb ul{padding:0;margin:0}
+.model{margin-top:12px}
+.model[hidden]{display:none}
+.tpl{font-size:1.02rem;line-height:2.4}
+.tpl input{display:inline-block;width:auto;min-width:9ch;border:0;border-bottom:2px solid var(--brand);border-radius:0;background:var(--hi);padding:2px 6px;margin:0 2px}
+.tpl textarea{min-height:76px;line-height:1.6}
+.hdr{display:grid;grid-template-columns:70px 1fr;gap:6px 8px;align-items:center;margin-bottom:12px}
+.hdr label{margin:0}
+.count{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:14px 0}
+.count b{font-size:1.4rem}
+.bar{flex:1;min-width:140px;height:10px;background:var(--line);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--warn);transition:width .2s}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.note{background:var(--hi);border-radius:8px;padding:10px 14px;margin-top:14px}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+.frame{font-size:.97rem;margin-top:12px}
+.fx{white-space:pre-line}
+</style>
+</head>
+<body>
+<main>
+<h1>Writing Part 1 Practice: Playing Online Games</h1>
+<p class="sub">Bahasa Inggeris 1119/4 · Write an email to your friend Jessie</p>
+
+<section id="info">
+  <h2>Step 1: Your details</h2>
+  <label for="sname">Full name</label>
+  <input type="text" id="sname" autocomplete="name">
+  <label for="sclass">Class</label>
+  <input type="text" id="sclass" placeholder="Example: 4 SPINEL">
+  <p class="err" id="err1" role="alert"></p>
+  <button id="start">Start worksheet</button>
+</section>
+
+<div id="work">
+<section>
+  <h2>Step 2: Prompt</h2>
+  <div class="mail">
+    <p><b>You received an email from your friend, Jessie.</b></p>
+    <p>Hi Nicholas,</p>
+    <p>My cousins and I want to play an online game together this weekend. <span class="hl">Should we choose a racing game, a football game or a building game?</span> <span class="hl">Why would you recommend that game?</span> <span class="hl">What can we do in the game?</span> <span class="hl">How long should we play?</span></p>
+    <p>Write back soon!</p>
+    <p>Jessie</p>
+  </div>
+  <p><b>Write an email to Jessie in about 80 words. Answer all four questions.</b></p>
+  <div class="scroll"><table>
+    <tr><th>Sub-question with translations</th></tr>
+    <tr><td>1. Which game should we choose?<span class="bm">Permainan manakah yang patut kami pilih?</span><span class="bm">我们应该选择哪个游戏？</span></td></tr>
+    <tr><td>2. Why would you recommend that game?<span class="bm">Mengapakah kamu mencadangkan permainan itu?</span><span class="bm">你为什么推荐那个游戏？</span></td></tr>
+    <tr><td>3. What can we do in the game?<span class="bm">Apakah yang boleh kami lakukan dalam permainan itu?</span><span class="bm">我们可以在游戏中做什么？</span></td></tr>
+    <tr><td>4. How long should we play?<span class="bm">Berapa lamakah kami patut bermain?</span><span class="bm">我们应该玩多久？</span></td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>Step 3: Suggested answers</h2>
+  <p class="sub">Pick a game to see ideas, a sentence frame and a model email.</p>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div class="scroll"><table class="wb"><tbody id="wb"></tbody></table></div>
+  <div class="mail frame"><b>Friendly linking words and sentence frame</b> <span class="bm">Kata penghubung mesra dan rangka ayat · 友好的连接词和句型</span><div id="frame" class="fx" style="margin-top:6px"></div></div>
+  <div class="actions" style="margin-top:12px"><button class="alt" id="mbtn" aria-expanded="false">Show a model email</button></div>
+  <div class="mail model fx" id="model" hidden></div>
+</section>
+
+<section>
+  <h2>Step 4: Build your sentences</h2>
+  <p class="sub">Complete these sentences using the game you chose in Step 3.</p>
+  <div class="tpl">
+    <div><input type="text" id="p_first" size="12" aria-label="linking word firstly">, I think you should choose <input type="text" id="p_g" size="22" aria-label="game">.</div>
+    <div>Next, I recommend it because <input type="text" id="p_w" size="28" aria-label="reason">.</div>
+    <div>Then, you can <input type="text" id="p_a1" size="22" aria-label="activity one"> and <input type="text" id="p_a2" size="22" aria-label="activity two">.</div>
+    <div>You can also <input type="text" id="p_a3" size="24" aria-label="activity three"> with your friends.</div>
+    <div><input type="text" id="p_last" size="12" aria-label="linking word lastly"> you should play for <input type="text" id="p_t" size="26" aria-label="how long">.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Step 5: Guided writing: fill in the blanks</h2>
+  <p class="sub">Type your opening and conclusion in the boxes. Fill in the yellow spaces in the body.</p>
+  <div class="hdr">
+    <label for="to">To:</label><input type="text" id="to" placeholder="Example: jessie123@gmail.com">
+    <label for="from">From:</label><input type="text" id="from" placeholder="Example: nicholas123@gmail.com">
+    <label for="subj">Subject:</label><input type="text" id="subj" placeholder="Example: My advice">
+  </div>
+  <div class="tpl">
+    <div>Hi Jessie,</div>
+    <label for="e_open" style="font-size:.9rem;color:var(--mute)">Opening (pendahuluan 开头)</label>
+    <textarea id="e_open" placeholder="How are you? I hope you are fine. I am writing this to give you some advice."></textarea>
+    <label style="font-size:.9rem;color:var(--mute)">Body (isi 主体)</label>
+    <div><input type="text" id="e_first" size="12" aria-label="linking word firstly">, I think you should choose <input type="text" id="e_g" size="22" aria-label="game">. Next, I recommend it because <input type="text" id="e_w" size="28" aria-label="reason">. Then, you can <input type="text" id="e_a1" size="20" aria-label="activity one"> and <input type="text" id="e_a2" size="20" aria-label="activity two">. You can also <input type="text" id="e_a3" size="22" aria-label="activity three"> with your friends. <input type="text" id="e_last" size="12" aria-label="linking word lastly"> you should play for <input type="text" id="e_t" size="24" aria-label="how long">. You can spend the rest of the day doing something else together.</div>
+    <label for="e_end" style="font-size:.9rem;color:var(--mute);margin-top:8px">In conclusion (kesimpulan 结论)</label>
+    <textarea id="e_end" placeholder="I hope my advice can help you. Have a great time. Bye!"></textarea>
+    <div style="margin-top:8px">Nicholas</div>
+  </div>
+  <div class="count"><span><b id="wc">0</b> words</span><div class="bar"><i id="bar"></i></div><span id="wmsg" style="color:var(--mute)">Aim for about 80 words</span></div>
+</section>
+
+<section>
+  <h2>Step 6: Submit to your teacher</h2>
+  <p class="sub">Your name, class and answers will be filled into a Google Form. When the form opens, check them and press <b>Submit</b> there.</p>
+  <div class="actions"><button id="send">Submit to teacher</button></div>
+  <p class="err" id="err2" role="alert"></p>
+  <div class="note" id="done" hidden>The Google Form is open in a new tab. Remember to press <b>Submit</b> in the form so your teacher receives your work.</div>
+</section>
+</div>
+</main>
+
+<script>
+const FORM_LINK = "https://docs.google.com/forms/d/e/1FAIpQLSdgBJa_9WppexUpyru8_vWUHs1I9wh7cqVKhajVZaslwOht2w/viewform?usp=pp_url&entry.1531883522=NAME&entry.1796003507=CLASS&entry.508689513=EMAILTEXT&entry.2135768433=WORDS";
+
+const $ = id => document.getElementById(id);
+const OPTS = {
+ mlbb:{label:"Mobile Legends: Bang Bang", place:["Mobile Legends: Bang Bang","Mobile Legends: Bang Bang","Mobile Legends: Bang Bang"],
+  why:[["fun","menyeronokkan","好玩的"],["exciting","mengujakan","令人兴奋的"],["enjoy playing with friends","suka bermain bersama kawan-kawan","喜欢和朋友一起玩"]],
+  act:[["choose a hero","memilih hero","选择英雄"],["use special skills","menggunakan kemahiran khas","使用特殊技能"],["destroy enemy towers","memusnahkan menara pihak lawan","摧毁敌方防御塔"]],
+  time:[["for one hour","selama satu jam","一个小时"],["then rest","kemudian berehat","然后休息"]],
+  frame:"I think you should choose Mobile Legends because it is ______.\nYou can ______ and ______.\nOh, and play for ______, then rest!",
+  model:"Hi Jessie,\nHow are you? I hope you are fine. I am writing this to give you some advice.\nFirstly, I think you should choose Mobile Legends: Bang Bang. Next, I recommend it because it is exciting. Then, you can choose a hero and use special skills. You can also destroy enemy towers with your friends. Lastly, you should play for one hour, then rest. You can spend the rest of the day doing something else together.\nI hope my advice can help you. Have a great time. Bye!\nNicholas"},
+ val:{label:"VALORANT", place:["VALORANT","VALORANT","VALORANT"],
+  why:[["exciting","mengujakan","令人兴奋的"],["challenging","mencabar","有挑战性的"],["enjoy team games","suka permainan berpasukan","喜欢团队游戏"]],
+  act:[["choose a character","memilih watak","选择角色"],["plant the Spike","memasang Spike","安装爆能器"],["defuse the Spike","menyahaktifkan Spike","拆除爆能器"]],
+  time:[["for one hour","selama satu jam","一个小时"],["then stop","kemudian berhenti","然后停止"]],
+  frame:"I think you should choose VALORANT because it is ______.\nYou can also ______.\nOh, and play for ______, then stop!",
+  model:"Hi Jessie,\nHow are you? I hope you are fine. I am writing this to give you some advice.\nFirstly, I think you should choose VALORANT. Next, I recommend it because it is challenging. Then, you can choose a character and plant the Spike. You can also defuse the Spike with your friends. Lastly, you should play for one hour, then stop. You can spend the rest of the day doing something else together.\nI hope my advice can help you. Have a great time. Bye!\nNicholas"},
+ build:{label:"A building game (Roblox)", place:["a building game","permainan membina","建造游戏"],
+  why:[["interesting","menarik","有趣的"],["love building things","suka membina sesuatu","喜欢建造东西"],["use your imagination","menggunakan imaginasi kamu","发挥想象力"]],
+  act:[["build houses","membina rumah","建造房屋"],["create a town","membina sebuah bandar","建造城镇"],["build with friends","membina bersama kawan-kawan","和朋友一起建造"]],
+  time:[["for 30 minutes","selama 30 minit","三十分钟"],["then do something else","kemudian melakukan aktiviti lain","然后做其他活动"]],
+  frame:"I think you should choose a building game because it is ______.\nYou can ______ and ______.\nOh, and remember to stop after ______!",
+  model:"Hi Jessie,\nHow are you? I hope you are fine. I am writing this to give you some advice.\nFirstly, I think you should choose a building game. Next, I recommend it because it is interesting. Then, you can build houses and create a town. You can also build together with your friends. Lastly, you should play for 30 minutes, then do something else. You can spend the rest of the day enjoying other activities together.\nI hope my advice can help you. Have a great time. Bye!\nNicholas"}
+};
+const li = a => `<li>${a[0]}${a[1]!==a[0]?`<span class="bm">${a[1]} · ${a[2]}</span>`:""}</li>`;
+const list = arr => `<ul>${arr.map(li).join("")}</ul>`;
+let cur = "mlbb";
+function drawOpt(){
+  const o = OPTS[cur];
+  $("wb").innerHTML =
+   `<tr><td>1. Which game should we choose?</td><td>${list([o.place])}</td></tr>`+
+   `<tr><td>2. Why would you recommend that game?</td><td>${list(o.why)}</td></tr>`+
+   `<tr><td>3. What can we do in the game?</td><td>${list(o.act)}</td></tr>`+
+   `<tr><td>4. How long should we play?</td><td>${list(o.time)}</td></tr>`;
+  $("frame").textContent = o.frame;
+  $("model").textContent = o.model;
+  document.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-selected", t.dataset.k === cur));
+}
+Object.keys(OPTS).forEach(k=>{
+  const b = document.createElement("button");
+  b.className="tab"; b.type="button"; b.dataset.k=k; b.setAttribute("role","tab");
+  b.textContent = OPTS[k].label;
+  b.onclick = ()=>{cur=k;drawOpt();};
+  $("tabs").appendChild(b);
+});
+drawOpt();
+$("mbtn").onclick = ()=>{
+  const m=$("model"); m.hidden=!m.hidden;
+  $("mbtn").textContent = m.hidden ? "Show a model email" : "Hide the model email";
+  $("mbtn").setAttribute("aria-expanded", String(!m.hidden));
+};
+
+$("start").onclick = ()=>{
+  const n=$("sname").value.trim(), c=$("sclass").value.trim();
+  if(!n||!c){$("err1").textContent="Please type your name and class to start.";return;}
+  $("err1").textContent="";
+  $("work").style.display="block";
+  $("info").querySelectorAll("input,button").forEach(x=>x.disabled=true);
+  $("work").scrollIntoView({behavior:"smooth"});
+};
+
+const v = id => $(id).value.trim();
+document.querySelectorAll("#work .tpl input,#work .tpl textarea").forEach(e=>e.addEventListener("input",update));
+function body(){
+  return "Hi Jessie,\n"+v("e_open")+"\n"+
+   v("e_first")+", I think you should choose "+v("e_g")+". Next, I recommend it because "+v("e_w")+". Then, you can "+v("e_a1")+" and "+v("e_a2")+". You can also "+v("e_a3")+" with your friends. "+v("e_last")+" you should play for "+v("e_t")+". You can spend the rest of the day doing something else together.\n"+
+   v("e_end");
+}
+function words(t){return (t.match(/[A-Za-z0-9'’-]+/g)||[]).length;}
+function update(){
+  const w = words(body());
+  $("wc").textContent=w;
+  $("bar").style.width=Math.min(100,w)+"%";
+  const ok = w>=70 && w<=100;
+  $("bar").style.background = ok ? "var(--ok)" : "var(--warn)";
+  $("wmsg").textContent = w<70 ? "Write a little more (about 80 words)" : w>100 ? "A bit long. Try to keep near 80 words" : "Good length";
+}
+update();
+
+function full(){
+  return "To: "+v("to")+"\nFrom: "+v("from")+"\nSubject: "+v("subj")+"\n\n"+body()+"\nNicholas";
+}
+$("send").onclick = ()=>{
+  $("err2").style.color="var(--warn)";
+  if(["e_open","e_first","e_g","e_w","e_a1","e_a2","e_a3","e_last","e_t","e_end"].some(k=>!v(k))){$("err2").textContent="Please complete every box and yellow space in Step 5 before you submit.";return;}
+  if(FORM_LINK.indexOf("PASTE_")===0){$("err2").textContent="Teacher setup needed: the Google Form link has not been added yet.";return;}
+  const rep={NAME:v("sname"),CLASS:v("sclass"),EMAILTEXT:full(),WORDS:String(words(body()))};
+  let url=FORM_LINK;
+  for(const k in rep){url=url.split("="+k).join("="+encodeURIComponent(rep[k]));}
+  $("err2").textContent="";
+  $("done").hidden=false;
+  window.open(url,"_blank","noopener");
+};
+</script>
+</body>
+</html>
